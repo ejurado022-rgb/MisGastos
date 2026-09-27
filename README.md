@@ -65,7 +65,7 @@ app/src/main/java/com/ernestojurado/misgastos/
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/<tu-usuario>/MisGastos.git
+   git clone https://github.com/ejurado022-rgb/MisGastos.git
    ```
 2. Ábrelo en Android Studio y espera a que termine la sincronización de Gradle.
 3. Ejecuta la app en un emulador o en un dispositivo físico.
