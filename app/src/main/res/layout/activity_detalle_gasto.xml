@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/raiz"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primario"
+    android:orientation="vertical"
+    tools:context=".DetalleGastoActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar.MisGastos"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="@string/detalle_gasto" />
+
+    <LinearLayout
+        android:id="@+id/contenido"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/fondo"
+        android:orientation="vertical"
+        android:padding="@dimen/margen_grande">
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Tarjeta.MisGastos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <ImageView
+                    android:id="@+id/ivIcono"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:background="@drawable/bg_circulo"
+                    android:importantForAccessibility="no"
+                    android:padding="18dp"
+                    android:src="@drawable/ic_otros" />
+
+                <TextView
+                    android:id="@+id/tvMonto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textAppearance="?attr/textAppearanceDisplaySmall"
+                    android:textColor="@color/texto_principal"
+                    android:textStyle="bold"
+                    tools:text="$25.50" />
+
+                <TextView
+                    android:id="@+id/tvDescripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textColor="@color/texto_secundario"
+                    tools:text="Almuerzo" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="20dp"
+                    android:background="@color/borde" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/categoria"
+                        android:textAppearance="@style/Texto.Etiqueta" />
+
+                    <TextView
+                        android:id="@+id/tvCategoria"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        android:textColor="@color/texto_principal"
+                        tools:text="Comida" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/fecha"
+                        android:textAppearance="@style/Texto.Etiqueta" />
+
+                    <TextView
+                        android:id="@+id/tvFecha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="6dp"
+                        android:gravity="center_vertical"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        android:textColor="@color/texto_principal"
+                        app:drawableStartCompat="@drawable/ic_calendario"
+                        app:drawableTint="@color/texto_secundario"
+                        tools:text="27 sept 2026, 10:30 a. m." />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEliminar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:backgroundTint="@color/rojo"
+            android:text="@string/eliminar"
+            android:textColor="@color/blanco"
+            app:icon="@drawable/ic_eliminar"
+            app:iconGravity="textStart"
+            app:iconTint="@color/blanco" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Mis Gastos</string>
+    <string name="splash_lema">Controla tu dinero, gasto a gasto</string>
+
+    <!-- Pantalla principal -->
+    <string name="total_gastado">Total gastado</string>
+    <string name="total_en">Total en %1$s</string>
+    <string name="filtrar_categoria">Filtrar por categoría</string>
+    <string name="ver_resumen">Ver resumen</string>
+    <string name="agregar_gasto">Agregar gasto</string>
+    <string name="vacio_titulo">Aún no hay gastos</string>
+    <string name="vacio_mensaje">Toca el botón + para registrar el primero</string>
+    <string name="item_subtitulo">%1$s · %2$s</string>
+    <string name="msg_gasto_agregado">Gasto guardado</string>
+    <string name="msg_gasto_eliminado">Gasto eliminado</string>
+    <plurals name="cantidad_gastos">
+        <item quantity="one">%d gasto registrado</item>
+        <item quantity="other">%d gastos registrados</item>
+    </plurals>
+
+    <!-- Agregar gasto -->
+    <string name="nuevo_gasto">Nuevo gasto</string>
+    <string name="descripcion">Descripción</string>
+    <string name="monto">Monto</string>
+    <string name="categoria">Categoría</string>
+    <string name="guardar">Guardar</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="error_descripcion">Escribe una descripción</string>
+    <string name="error_monto_invalido">Ingresa un monto válido</string>
+    <string name="error_monto_cero">El monto debe ser mayor que cero</string>
+    <string name="error_categoria">Selecciona una categoría</string>
+
+    <!-- Detalle -->
+    <string name="detalle_gasto">Detalle del gasto</string>
+    <string name="fecha">Fecha</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="eliminar_titulo">¿Eliminar gasto?</string>
+    <string name="eliminar_mensaje">Esta acción no se puede deshacer.</string>
+
+    <!-- Resumen -->
+    <string name="resumen">Resumen</string>
+    <string name="total">Total</string>
+    <string name="promedio">Promedio</string>
+    <string name="gasto_mayor">Gasto mayor</string>
+    <string name="porcentaje_total" formatted="false">% del total</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="por_categoria">Distribución por categoría</string>
+    <string name="barra_valor">%1$s (%2$s)</string>
+</resources>

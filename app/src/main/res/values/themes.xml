@@ -1,0 +1,46 @@
+<resources>
+    <!-- Tema base de la aplicación -->
+    <style name="Base.Theme.MisGastos" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primario</item>
+        <item name="colorOnPrimary">@color/blanco</item>
+        <item name="colorPrimaryContainer">@color/primario_claro</item>
+        <item name="colorOnPrimaryContainer">@color/primario_oscuro</item>
+        <item name="colorSecondary">@color/acento</item>
+        <item name="colorTertiary">@color/acento</item>
+        <item name="colorError">@color/rojo</item>
+        <item name="android:colorBackground">@color/fondo</item>
+        <item name="colorSurface">@color/superficie</item>
+        <item name="colorOnSurface">@color/texto_principal</item>
+        <item name="colorOnSurfaceVariant">@color/texto_secundario</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Theme.MisGastos" parent="Base.Theme.MisGastos" />
+
+    <style name="Theme.MisGastos.Splash">
+        <item name="android:windowBackground">@color/primario</item>
+    </style>
+
+    <!-- Estilos reutilizables -->
+    <style name="Toolbar.MisGastos" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/primario</item>
+        <item name="titleTextColor">@color/blanco</item>
+        <item name="navigationIcon">@drawable/ic_atras</item>
+        <item name="navigationIconTint">@color/blanco</item>
+    </style>
+
+    <style name="Tarjeta.MisGastos" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/superficie</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">2dp</item>
+    </style>
+
+    <style name="Texto.Etiqueta" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:textColor">@color/texto_secundario</item>
+    </style>
+
+    <style name="Texto.Valor" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/texto_principal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

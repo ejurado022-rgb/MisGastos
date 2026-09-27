@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primario">#00796B</color>
+    <color name="primario_oscuro">#004D40</color>
+    <color name="primario_claro">#B2DFDB</color>
+    <color name="acento">#FFB300</color>
+    <color name="rojo">#D32F2F</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="blanco_suave">#CCFFFFFF</color>
+
+    <color name="fondo">#F4F6F6</color>
+    <color name="superficie">#FFFFFF</color>
+    <color name="texto_principal">#1C2526</color>
+    <color name="texto_secundario">#66727A</color>
+    <color name="borde">#DDE3E3</color>
+
+    <color name="cat_comida">#EF6C00</color>
+    <color name="cat_transporte">#1E88E5</color>
+    <color name="cat_ocio">#8E24AA</color>
+    <color name="cat_servicios">#F9A825</color>
+    <color name="cat_salud">#E53935</color>
+    <color name="cat_otros">#546E7A</color>
+</resources>

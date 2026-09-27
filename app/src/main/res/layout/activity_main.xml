@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primario"
+    tools:context=".MainActivity">
+
+    <!-- La tarjeta del total se contrae al deslizar la lista hacia arriba (ver res/xml/activity_main_scene.xml) -->
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fondo"
+        app:layoutDescription="@xml/activity_main_scene">
+
+        <View
+            android:id="@+id/headerFondo"
+            android:layout_width="0dp"
+            android:layout_height="210dp"
+            android:background="@drawable/bg_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnResumen"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/ver_resumen"
+            android:src="@drawable/ic_resumen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/app_name"
+            android:textAppearance="?attr/textAppearanceTitleLarge"
+            android:textColor="@color/blanco"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/btnResumen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnResumen" />
+
+        <TextView
+            android:id="@+id/tvEtiquetaTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_gastado"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="@color/blanco_suave" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blanco"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            tools:text="$1,250.00" />
+
+        <TextView
+            android:id="@+id/tvCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="@color/blanco_suave"
+            tools:text="5 gastos registrados" />
+
+        <!-- Filtro por categoría: queda montado sobre el borde inferior del encabezado -->
+        <FrameLayout
+            android:id="@+id/contenedorFiltro"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/bg_campo"
+            android:elevation="3dp"
+            android:paddingHorizontal="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/headerFondo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerFondo">
+
+            <Spinner
+                android:id="@+id/spFiltro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/filtrar_categoria"
+                android:popupBackground="@drawable/bg_campo" />
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGastos"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:clipToPadding="false"
+            android:paddingTop="4dp"
+            android:paddingBottom="96dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contenedorFiltro"
+            tools:listitem="@layout/item_gasto" />
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    <!-- Estado vacío con animación Lottie -->
+    <LinearLayout
+        android:id="@+id/layoutVacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieVacio"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/anim_vacio" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vacio_titulo"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="@color/texto_principal"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="@string/vacio_mensaje"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="@color/texto_secundario" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/agregar_gasto"
+        android:src="@drawable/ic_agregar"
+        app:backgroundTint="@color/acento"
+        app:tint="@color/primario_oscuro" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

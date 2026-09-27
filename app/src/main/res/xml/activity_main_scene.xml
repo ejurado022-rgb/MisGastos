@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Escena de MotionLayout: al deslizar la lista hacia arriba el encabezado se contrae -->
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="400">
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:touchAnchorId="@id/rvGastos"
+            motion:touchAnchorSide="top" />
+    </Transition>
+
+    <!-- Encabezado expandido -->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/headerFondo"
+            android:layout_width="0dp"
+            android:layout_height="210dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/tvEtiquetaTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:alpha="1"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/btnResumen" />
+
+        <Constraint
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="2dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/tvEtiquetaTotal">
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customFloatValue="40" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/tvCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:alpha="1"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/tvTotal" />
+    </ConstraintSet>
+
+    <!-- Encabezado contraído -->
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/headerFondo"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/tvEtiquetaTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:alpha="0"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/btnResumen" />
+
+        <Constraint
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/btnResumen">
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customFloatValue="26" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/tvCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:alpha="0"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/tvTotal" />
+    </ConstraintSet>
+</MotionScene>
