@@ -33,6 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:max="100"
+        app:indicatorTrackGapSize="0dp"
         app:trackCornerRadius="6dp"
+        app:trackStopIndicatorSize="0dp"
         app:trackThickness="10dp" />
 </LinearLayout>
