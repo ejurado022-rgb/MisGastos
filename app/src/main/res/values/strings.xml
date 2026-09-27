@@ -10,6 +10,8 @@
     <string name="agregar_gasto">Agregar gasto</string>
     <string name="vacio_titulo">Aún no hay gastos</string>
     <string name="vacio_mensaje">Toca el botón + para registrar el primero</string>
+    <string name="vacio_filtro_titulo">No hay gastos en %1$s</string>
+    <string name="vacio_filtro_mensaje">Prueba con otra categoría o registra uno nuevo</string>
     <string name="item_subtitulo">%1$s · %2$s</string>
     <string name="msg_gasto_agregado">Gasto guardado</string>
     <string name="msg_gasto_eliminado">Gasto eliminado</string>

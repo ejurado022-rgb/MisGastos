@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rvGastos;
     private LinearLayout layoutVacio;
     private LottieAnimationView lottieVacio;
+    private TextView tvVacioTitulo;
+    private TextView tvVacioMensaje;
 
     // Recibe el resultado de AgregarGastoActivity y DetalleGastoActivity
     private final ActivityResultLauncher<Intent> agregarLauncher = registerForActivityResult(
@@ -86,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
         rvGastos = findViewById(R.id.rvGastos);
         layoutVacio = findViewById(R.id.layoutVacio);
         lottieVacio = findViewById(R.id.lottieVacio);
+        tvVacioTitulo = findViewById(R.id.tvVacioTitulo);
+        tvVacioMensaje = findViewById(R.id.tvVacioMensaje);
         ImageButton btnResumen = findViewById(R.id.btnResumen);
         FloatingActionButton fabAgregar = findViewById(R.id.fabAgregar);
 
@@ -145,10 +149,15 @@ public class MainActivity extends AppCompatActivity {
         List<Gasto> gastos = CalculadoraGastos.filtrar(repositorio.listar(), categoria);
         adapter.setGastos(gastos);
 
+        // El mensaje de lista vacía cambia si hay un filtro aplicado
         if (Categorias.TODAS.equals(categoria)) {
             tvEtiquetaTotal.setText(R.string.total_gastado);
+            tvVacioTitulo.setText(R.string.vacio_titulo);
+            tvVacioMensaje.setText(R.string.vacio_mensaje);
         } else {
             tvEtiquetaTotal.setText(getString(R.string.total_en, categoria));
+            tvVacioTitulo.setText(getString(R.string.vacio_filtro_titulo, categoria));
+            tvVacioMensaje.setText(R.string.vacio_filtro_mensaje);
         }
         tvTotal.setText(Formato.moneda(CalculadoraGastos.total(gastos)));
         tvCantidad.setText(getResources().getQuantityString(
