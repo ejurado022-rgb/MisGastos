@@ -57,9 +57,9 @@ app/src/main/java/com/ernestojurado/misgastos/
 
 ## Capturas
 
-| Inicio | Nuevo gasto | Detalle | Resumen |
-|---|---|---|---|
-| _(captura)_ | _(captura)_ | _(captura)_ | _(captura)_ |
+| Inicio | Encabezado contraído | Nuevo gasto | Detalle | Resumen |
+|---|---|---|---|---|
+| <img src="docs/capturas/inicio.png" width="180" alt="Pantalla principal"> | <img src="docs/capturas/inicio_contraido.png" width="180" alt="Encabezado contraído con MotionLayout"> | <img src="docs/capturas/nuevo_gasto.png" width="180" alt="Formulario para agregar gasto"> | <img src="docs/capturas/detalle.png" width="180" alt="Detalle del gasto"> | <img src="docs/capturas/resumen.png" width="180" alt="Resumen de gastos"> |
 
 ## Cómo ejecutarlo
 
